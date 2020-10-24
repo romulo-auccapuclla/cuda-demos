@@ -23,6 +23,11 @@ int main(void)
     y[i] = 2.0f;
   }
 
+  /*
+  dim3 block_dim (32, 32, 1);
+  dim3 grid_dim (4, 4, 1);
+  add<<< grid_dim, block_dim >>> (N, x, y);
+  */
   // Run kernel on 1M elements on the GPU
   add<<<1, 1>>>(N, x, y);
 
