@@ -26,22 +26,22 @@ int main() {
     string arch = "";
     switch (major) {
     case 1:
-        //TESLA
+        arch = "TESLA"
         cudaCores = 8;
         break;
     case 2:
-        //FERMI
+        arch = "FERMI"
         if (minor == 0)
             cudaCores = 32;
         else
             cudaCores = 48;
         break;
     case 3:
-        //KEPLER
+        arch = "KEPLER"
         cudaCores = 192;
         break;
     case 5:
-        //MAXWELL
+        arch = "MAXWELL"
         cudaCores = 128;
         break;
     case 6:
@@ -51,12 +51,13 @@ int main() {
         else printf("Unknown device type\n");
         break;
     case 7:
-        //VOLTA (7.0) TURING (7.5)
+        if (minor == 0) arch = "VOLTA"
+        if (minor == 5) arch = "TURING"
         if ((minor == 0) || (minor == 5)) cudaCores = 64;
         else printf("Unknown device type\n");
         break;
     case 8:
-        //AMPERE
+        arch = "AMPERE"
         if (minor == 0) cudaCores = 64;
         else printf("Unknown device type\n");
         break;
