@@ -51,7 +51,11 @@ int main() {
         else printf("Unknown device type\n");
         break;
     case 7:
-        if (minor == 0) arch = "VOLTA";
+        if ((minor == 0) || (minor == 2)) {
+            arch = "VOLTA";
+            cudaCores = 384;
+            //tensorCores = 48;
+        }
         if (minor == 5) arch = "TURING";
         if ((minor == 0) || (minor == 5)) cudaCores = 64;
         else printf("Unknown device type\n");
