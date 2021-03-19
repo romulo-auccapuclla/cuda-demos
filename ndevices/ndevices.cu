@@ -97,7 +97,7 @@ int main() {
     printf("    z = %d\n", prop.maxGridSize[2]);
 
     printf("  warpSize: %d\n", prop.warpSize);
-    printf("  memPitch: %d\n", prop.memPitch);
+    printf("  memPitch: %zu\n", prop.memPitch);
     printf("  Memory Clock Rate (KHz): %d\n", prop.memoryClockRate);
     printf("  Memory Bus Width (bits): %d\n", prop.memoryBusWidth);
     printf("  Peak Memory Bandwidth (GB/s): %f\n\n", 2.0*prop.memoryClockRate*(prop.memoryBusWidth/8)/1.0e6);
